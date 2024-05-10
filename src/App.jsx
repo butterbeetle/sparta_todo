@@ -1,10 +1,9 @@
-import styles from "./App.module.css";
 import Header from "./Layout/Header/Header";
 import Main from "./Layout/Main/Main";
 
 function App() {
   return (
-    <div className={styles.screen}>
+    <div className="max-h-full flex flex-col">
       <Header />
       <Main />
     </div>
