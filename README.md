@@ -1,9 +1,33 @@
-# React + Vite
+# ✨ 과제 개요
+- 지금까지 배운 내용을 활용하여 나만의 Todo List 만들기
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ⏰ 기한
+- 2024.05.10 ~ 2024.05.17
 
-Currently, two official plugins are available:
+## ⚙ 구현 기능
+1. UI 구현하기
+2. Todo 추가 하기
+3. 3.Todo 삭제 하기
+4. Todo 완료/취소 상태 변경하기 ( 진행 중 <-> 완료 )
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# sparta_todo
+## 🎇 필수 요구 사항
+##### 디자인은 취향대로 하되 화면 구성은 동일하게
+1. 제목과 내용 입력 후 추가버튼 클릭 시, **Working** 파트에 새로운 Todo 추가
+	- input 비우기
+2.	삭제버튼 클릭 시, **Working,Done** 에 있는 것과는 상관없이 삭제하기
+3. Todo의 상태에 따른 버튼 조건부 렌더링
+	-	isDone === true
+    	- 취소버튼
+    -	isDone === false
+    	-	완료버튼
+4. Todo의 상태가 **Working**이면 위쪽, **Done**이면 아래쪽으로 배치
+5. Layout의 최대 너비는 1200px, 최소 너비는 800px로 제한 후 전체 화면의 가운데로 정렬
+6. 컴포넌트 구조는 자유롭게 구현
+
+## ✒ 제출 시 답변
+1. **JSX 문법**이란 무엇일까요?
+2. 사용자가 입력하는 값, 또는 이미 입력된 값,
+   Todo의 타이틀과 같은 **애플리케이션의 상태를 관리하기 위해 리액트의 어떤 기능을 사용하셨나요**?
+4. 애플리케이션의 **상태 값들을 컴포넌트 간 어떤 방식으로 공유하셨나요**?
+5. 기능 구현을 위해 **불변성 유지가** 필요한 부분이 있었다면 하나만 설명해 주세요.
+6. 반복되는 컴포넌트를 파악하고 재사용할 수 있는 **컴포넌트로 분리해 보셨나요?** 그렇다면 **어떠한 이점이 있었나요?**
