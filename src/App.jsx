@@ -1,11 +1,10 @@
-import Header from "./Layout/Header/Header";
-import Main from "./Layout/Main/Main";
+import TodoMain from "./Components/Layout/Main/TodoMain";
 
 function App() {
   return (
-    <div className="max-h-full flex flex-col">
-      <Header />
-      <Main />
+    <div className="max-h-full flex flex-col h-screen">
+      {/* <Header /> */}
+      <TodoMain />
     </div>
   );
 }
