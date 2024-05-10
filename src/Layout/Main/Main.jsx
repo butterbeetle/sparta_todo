@@ -1,6 +1,8 @@
+import ListCard from "../../Components/ListCard";
+
 export default function Main() {
   return (
-    <main className="bg-zinc-800">
+    <main className="bg-zinc-600 ">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex gap-4 justify-center p-4 items-center text-white">
           <div className="flex flex-col text-2xl">
@@ -15,7 +17,7 @@ export default function Main() {
               <input
                 id={"name"}
                 type="text"
-                className=" block p-6 pb-1 w-full text-base appearance-none focus:outline-none peer "
+                className=" block p-6 pb-1 w-full text-base appearance-none focus:outline-none peer bg-gray-100"
                 placeholder=""
                 maxLength={28}
               />
@@ -26,7 +28,7 @@ export default function Main() {
           left-6
           z-10
           text-base
-          text-zinc-300
+          text-zinc-400
           duration-150
           transform
           -translate-y-3
@@ -74,6 +76,10 @@ export default function Main() {
             추가
           </button>
         </form>
+        <div className="bg-gray-100">
+          <h1 className="text-3xl p-2 drop-shadow-lg">진행 중</h1>
+          <ListCard />
+        </div>
       </div>
     </main>
   );
