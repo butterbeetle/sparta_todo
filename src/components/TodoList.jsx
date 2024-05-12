@@ -28,7 +28,12 @@ export default function TodoList({
           className="flex justify-center items-center 
           flex-1 text-lg font-bold"
         >
-          저런.. 할일 부터 추가하십시오..
+          저런..{" "}
+          {`${
+            title === "진행 중"
+              ? "할일이나 추가하십시오.."
+              : "완료나 누르십시오.."
+          }`}
         </div>
       )}
     </div>
