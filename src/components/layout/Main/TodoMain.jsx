@@ -35,6 +35,11 @@ export default function TodoMain() {
     setTodoData([...newTodo]);
   };
 
+  const onDeleteHandler = (id) => {
+    const newTodo = todoData.filter((data) => data.id !== id);
+    setTodoData([...newTodo]);
+  };
+
   return (
     <main className="bg-zinc-600 min-h-screen">
       <div className="flex flex-col max-w-[1200px] mx-auto h-full">
@@ -66,11 +71,13 @@ export default function TodoMain() {
             title={"진행 중"}
             list={todoData.filter((d) => !d.isDone)}
             onToggleHandler={onToggleHandler}
+            onDeleteHandler={onDeleteHandler}
           />
           <TodoList
             title={"완료"}
             list={todoData.filter((d) => d.isDone)}
             onToggleHandler={onToggleHandler}
+            onDeleteHandler={onDeleteHandler}
           />
         </div>
       </div>

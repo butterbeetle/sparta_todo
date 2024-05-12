@@ -6,6 +6,7 @@ export default function TodoListCard({
   todoTitle,
   todoContent,
   onToggleHandler,
+  onDeleteHandler,
 }) {
   const [isDown, setIsDown] = useState(false);
 
@@ -28,7 +29,10 @@ export default function TodoListCard({
             >
               <Check color="#27AE60" size={16} />
             </i>
-            <i className="border-2 border-solid border-[#E74C3C] rounded-full size-6 flex justify-center items-center">
+            <i
+              onClick={() => onDeleteHandler(id)}
+              className="border-2 border-solid border-[#E74C3C] rounded-full size-6 flex justify-center items-center"
+            >
               <Trash2 color=" #C0392B" size={16} />
             </i>
           </div>

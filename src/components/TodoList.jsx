@@ -1,13 +1,22 @@
 import TodoListCard from "./TodoListCard";
 
-export default function TodoList({ title, list, onToggleHandler }) {
+export default function TodoList({
+  title,
+  list,
+  onToggleHandler,
+  onDeleteHandler,
+}) {
   return (
     <div className="flex flex-col min-h-[300px]">
       <h1 className="text-3xl p-2 drop-shadow-lg">{title}</h1>
       {list.length ? (
         list.map((data) => (
           <li key={data.id} className="flex flex-col gap-4 p-2">
-            <TodoListCard onToggleHandler={onToggleHandler} {...data} />
+            <TodoListCard
+              {...data}
+              onToggleHandler={onToggleHandler}
+              onDeleteHandler={onDeleteHandler}
+            />
           </li>
         ))
       ) : (
