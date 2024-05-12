@@ -46,7 +46,9 @@ export default function TodoMain() {
       isDone: false,
     };
 
-    setTodoData([...todoData, newTodo]);
+    setTodoData((prev) => {
+      return [...prev, newTodo];
+    });
     localStorage.setItem("todo", JSON.stringify([...todoData, newTodo]));
 
     setTodoTitle("");
@@ -61,14 +63,14 @@ export default function TodoMain() {
       return data;
     });
 
-    setTodoData([...newTodo]);
+    setTodoData(() => [...newTodo]);
     localStorage.setItem("todo", JSON.stringify([...newTodo]));
   };
 
   const onDeleteHandler = (id) => {
     const newTodo = todoData.filter((data) => data.id !== id);
 
-    setTodoData([...newTodo]);
+    setTodoData(() => [...newTodo]);
     localStorage.setItem("todo", JSON.stringify([...newTodo]));
   };
 
