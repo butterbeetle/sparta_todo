@@ -11,7 +11,11 @@ export default function TodoListCard({
   const [isDown, setIsDown] = useState(false);
 
   return (
-    <div className=" bg-gray-100 p-4 font-bold shadow-lg rounded-xl border-2 border-solid border-gray-200 divide-y-2 divide-solid">
+    <div
+      className=" bg-gray-100 p-4 font-bold shadow-lg rounded-xl border-2 border-solid
+     border-gray-200 divide-y-2 divide-solid
+     md:min-h-fit"
+    >
       <div className="flex justify-between text-lg py-2">
         <p
           onClick={() => setIsDown((prev) => !prev)}
@@ -38,7 +42,7 @@ export default function TodoListCard({
           </div>
         </div>
       </div>
-      <div className={`text-sm py-2 ${isDown ? "block" : "hidden"}`}>
+      <div className={`text-sm py-2 ${isDown ? "block" : "hidden"} md:block`}>
         <p className=" break-words">{todoContent}</p>
       </div>
     </div>

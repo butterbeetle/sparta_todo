@@ -9,18 +9,25 @@ export default function TodoList({
   return (
     <div className="flex flex-col min-h-[300px]">
       <h1 className="text-3xl p-2 drop-shadow-lg">{title}</h1>
-      {list.length ? (
-        list.map((data) => (
-          <li key={data.id} className="flex flex-col gap-4 p-2">
+      <div
+        className="flex flex-col md:grid 
+      md:grid-cols-2 lg:grid-cols-4"
+      >
+        {list.map((data) => (
+          <li key={data.id} className="flex flex-col gap-4 p-2 ">
             <TodoListCard
               {...data}
               onToggleHandler={onToggleHandler}
               onDeleteHandler={onDeleteHandler}
             />
           </li>
-        ))
-      ) : (
-        <div className="flex justify-center items-center flex-1 text-lg font-bold">
+        ))}
+      </div>
+      {!list.length && (
+        <div
+          className="flex justify-center items-center 
+          flex-1 text-lg font-bold"
+        >
           저런.. 할일 부터 추가하십시오..
         </div>
       )}
