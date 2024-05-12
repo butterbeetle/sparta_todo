@@ -4,7 +4,9 @@ import TodoList from "../../TodoList";
 import Input from "../../ui/Input";
 
 export default function TodoMain() {
-  const [todoData, setTodoData] = useState([]);
+  const [todoData, setTodoData] = useState(
+    JSON.parse(localStorage.getItem("todo")) || []
+  );
   const [todoTitle, setTodoTitle] = useState("");
   const [todoContent, setTodoContent] = useState("");
 
@@ -21,6 +23,7 @@ export default function TodoMain() {
     };
 
     setTodoData([...todoData, newTodo]);
+    localStorage.setItem("todo", JSON.stringify([...todoData, newTodo]));
 
     setTodoTitle("");
     setTodoContent("");
@@ -31,13 +34,18 @@ export default function TodoMain() {
       if (data.id === id) {
         return { ...data, isDone: !data.isDone };
       }
+      return data;
     });
+
     setTodoData([...newTodo]);
+    localStorage.setItem("todo", JSON.stringify([...newTodo]));
   };
 
   const onDeleteHandler = (id) => {
     const newTodo = todoData.filter((data) => data.id !== id);
+
     setTodoData([...newTodo]);
+    localStorage.setItem("todo", JSON.stringify([...newTodo]));
   };
 
   return (
