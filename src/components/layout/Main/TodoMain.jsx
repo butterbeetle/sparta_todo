@@ -9,9 +9,33 @@ export default function TodoMain() {
   );
   const [todoTitle, setTodoTitle] = useState("");
   const [todoContent, setTodoContent] = useState("");
+  const [todoError, setTodoError] = useState({
+    title: "",
+    content: "",
+  });
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+
+    if (!todoTitle.length || !todoContent.length) {
+      if (!todoTitle.length) {
+        setTodoError((prev) => {
+          return { ...prev, title: "을 입력해주세요.." };
+        });
+      }
+      if (!todoContent.length) {
+        setTodoError((prev) => {
+          return { ...prev, content: "을 입력해주세요.." };
+        });
+      }
+
+      return;
+    }
+
+    setTodoError({
+      title: "",
+      content: "",
+    });
 
     const id = `_${Math.random().toString(36).slice(2, 16)}`;
 
@@ -62,12 +86,14 @@ export default function TodoMain() {
               onChange={(e) => setTodoTitle(e.target.value)}
               value={todoTitle}
               label="제목"
+              error={todoError}
             />
             <Input
-              id="Content"
+              id="content"
               onChange={(e) => setTodoContent(e.target.value)}
               value={todoContent}
               label="내용"
+              error={todoError}
             />
           </div>
           <button className="w-full bg-zinc-700 p-3 text-2xl text-white">

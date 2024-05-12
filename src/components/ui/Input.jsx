@@ -1,4 +1,4 @@
-export default function Input({ id, onChange, value, label }) {
+export default function Input({ id, onChange, value, label, error }) {
   return (
     <div className="relative">
       <input
@@ -11,7 +11,7 @@ export default function Input({ id, onChange, value, label }) {
         maxLength={28}
       />
       <label
-        className="absolute top-4 left-6
+        className="absolute top-4 left-6 flex
           z-10 text-base text-zinc-400 duration-150
           transform -translate-y-3 scale-75 origin-[0]
           peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
@@ -20,6 +20,9 @@ export default function Input({ id, onChange, value, label }) {
         htmlFor={id}
       >
         {label}
+        <p className={` text-red-400 text-md ${value && "hidden"}`}>
+          {error[id]}
+        </p>
       </label>
     </div>
   );
