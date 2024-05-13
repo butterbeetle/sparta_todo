@@ -33,8 +33,8 @@ export default function TodoMain() {
     }
 
     setTodoError({
-      title: "",
-      content: "",
+      title: false,
+      content: false,
     });
 
     const id = `_${Math.random().toString(36).slice(2, 16)}`;
@@ -102,7 +102,7 @@ export default function TodoMain() {
             추가
           </button>
         </form>
-        <div className="bg-gray-100 h-full">
+        <div className="bg-gray-100 h-full md:rounded-xl shadow-xl shadow-stone-700">
           <TodoList
             title={"진행 중"}
             list={todoData.filter((d) => !d.isDone)}
