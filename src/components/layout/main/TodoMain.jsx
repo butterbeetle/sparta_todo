@@ -10,8 +10,8 @@ export default function TodoMain() {
   const [todoTitle, setTodoTitle] = useState("");
   const [todoContent, setTodoContent] = useState("");
   const [todoError, setTodoError] = useState({
-    title: "",
-    content: "",
+    title: false,
+    content: false,
   });
 
   const onSubmitHandler = (e) => {
@@ -20,12 +20,12 @@ export default function TodoMain() {
     if (!todoTitle.length || !todoContent.length) {
       if (!todoTitle.length) {
         setTodoError((prev) => {
-          return { ...prev, title: "을 입력해주세요.." };
+          return { ...prev, title: true };
         });
       }
       if (!todoContent.length) {
         setTodoError((prev) => {
-          return { ...prev, content: "을 입력해주세요.." };
+          return { ...prev, content: true };
         });
       }
 

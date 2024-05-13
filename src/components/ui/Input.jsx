@@ -21,7 +21,7 @@ export default function Input({ id, onChange, value, label, error }) {
       >
         {label}
         <p className={` text-red-400 text-md ${value && "hidden"}`}>
-          {error[id]}
+          {error[id] && "을 입력해주세요"}
         </p>
       </label>
     </div>
