@@ -5,6 +5,14 @@
 * {
   font-family: "Neue Haas Grotesk Display Pro", sans-serif;
 }
+html,
+body {
+  height: 100%;
+}
+
+body > #root > div {
+  height: 100%;
+}
 
 html,
 body,

@@ -75,7 +75,7 @@ export default function TodoMain() {
   };
 
   return (
-    <main className="bg-zinc-600 min-h-screen md:pb-14">
+    <main className="bg-zinc-600 min-h-screen h-full">
       <div className="flex flex-col max-w-[1200px] mx-auto h-full">
         <TodoClock />
         <form
@@ -104,7 +104,7 @@ export default function TodoMain() {
             </button>
           </div>
         </form>
-        <div className="bg-gray-200 h-full md:rounded-xl shadow-xl shadow-stone-700 py-6 px-4 divide-y divide-solid divide-gray-300">
+        <div className="bg-gray-200  min-h-[700px] h-full md:rounded-xl shadow-xl shadow-stone-700 py-6 px-4 divide-y divide-solid divide-gray-300">
           <TodoList
             title={"진행 중"}
             list={todoData.filter((d) => !d.isDone)}

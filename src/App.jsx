@@ -2,7 +2,7 @@ import TodoMain from "./components/layout/main/TodoMain";
 
 function App() {
   return (
-    <div className="max-h-full flex flex-col h-screen">
+    <div className="h-screen flex flex-col ">
       <TodoMain />
     </div>
   );
