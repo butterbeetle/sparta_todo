@@ -5,6 +5,7 @@ export default function TodoListCard({
   id,
   todoTitle,
   todoContent,
+  isDone,
   onToggleHandler,
   onDeleteHandler,
 }) {
@@ -12,9 +13,10 @@ export default function TodoListCard({
 
   return (
     <div
-      className=" bg-gray-100 p-4 font-bold shadow-lg rounded-xl border-2 border-solid
+      className={`bg-gray-100 p-4 font-bold shadow-lg rounded-xl border-2 border-solid
      border-gray-200 divide-y-2 divide-solid
-     md:min-h-fit"
+     border-t-4 ${isDone ? "border-t-green-400" : "border-t-red-400"}
+      md:min-h-fit`}
     >
       <div className="flex justify-between text-lg py-2">
         <p
