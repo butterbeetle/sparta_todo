@@ -1,11 +1,13 @@
 export default function Input({ id, onChange, value, label, error }) {
   return (
-    <div className="relative">
+    <div className="relative ">
       <input
         id={id}
         value={value}
         type="text"
-        className=" block p-6 pb-1 w-full text-base appearance-none focus:outline-none peer bg-gray-100"
+        className={`${
+          id === "content" ? "md:rounded-bl-2xl" : "md:rounded-tl-2xl"
+        } block p-6 pb-1 w-full text-base appearance-none focus:outline-none peer bg-gray-200`}
         placeholder=""
         onChange={onChange}
         maxLength={28}

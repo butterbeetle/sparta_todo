@@ -75,34 +75,36 @@ export default function TodoMain() {
   };
 
   return (
-    <main className="bg-zinc-600 min-h-screen">
+    <main className="bg-zinc-600 min-h-screen md:pb-14">
       <div className="flex flex-col max-w-[1200px] mx-auto h-full">
         <TodoClock />
         <form
           onSubmit={onSubmitHandler}
-          className="max-w-[800px] w-full mx-auto"
+          className="max-w-[1200px] w-full mx-auto md:mb-10"
         >
-          <div className="divide-y divide-solid divide-gray-300 ">
-            <Input
-              id="title"
-              onChange={(e) => setTodoTitle(e.target.value)}
-              value={todoTitle}
-              label="제목"
-              error={todoError}
-            />
-            <Input
-              id="content"
-              onChange={(e) => setTodoContent(e.target.value)}
-              value={todoContent}
-              label="내용"
-              error={todoError}
-            />
+          <div className="md:flex">
+            <div className="w-full divide-y divide-solid divide-gray-300 ">
+              <Input
+                id="title"
+                onChange={(e) => setTodoTitle(e.target.value)}
+                value={todoTitle}
+                label="제목"
+                error={todoError}
+              />
+              <Input
+                id="content"
+                onChange={(e) => setTodoContent(e.target.value)}
+                value={todoContent}
+                label="내용"
+                error={todoError}
+              />
+            </div>
+            <button className="w-full md:flex-0 md:w-fit bg-zinc-700 p-3 text-2xl text-white md:rounded-r-2xl">
+              추가
+            </button>
           </div>
-          <button className="w-full bg-zinc-700 p-3 text-2xl text-white">
-            추가
-          </button>
         </form>
-        <div className="bg-gray-100 h-full md:rounded-xl shadow-xl shadow-stone-700">
+        <div className="bg-gray-200 h-full md:rounded-xl shadow-xl shadow-stone-700 py-6 px-4 divide-y divide-solid divide-gray-300">
           <TodoList
             title={"진행 중"}
             list={todoData.filter((d) => !d.isDone)}

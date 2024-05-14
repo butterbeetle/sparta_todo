@@ -7,7 +7,7 @@ export default function TodoList({
   onDeleteHandler,
 }) {
   return (
-    <div className="flex flex-col min-h-[300px]">
+    <div className="flex flex-col min-h-[300px] py-2">
       <h1 className="text-3xl p-2 drop-shadow-lg">{title}</h1>
       <div
         className="flex flex-col md:grid 
