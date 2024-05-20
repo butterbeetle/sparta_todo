@@ -8,7 +8,7 @@ const options = {
   second: "2-digit",
   hour12: false,
 };
-export default function FormatTime(date) {
+export default function formatTime(date) {
   const clock = new Intl.DateTimeFormat("default", options).format(date);
   const [year, month, day, temp] = clock.split(".");
   const [weekday, time] = temp.trim().split(" ");

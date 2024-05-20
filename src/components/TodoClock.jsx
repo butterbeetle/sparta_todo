@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import FormatTime from "../utils/formatTime";
+import formatTime from "../utils/formatTime";
 
 export default function TodoClock() {
-  const { year, month, day, weekday, time } = FormatTime(new Date());
+  const { year, month, day, weekday, time } = formatTime(new Date());
   const [curTime, setCurTime] = useState(time);
 
   useEffect(() => {
     const tick = setInterval(() => {
-      const { time } = FormatTime(new Date());
+      const { time } = formatTime(new Date());
       setCurTime(time);
     }, 1000);
 
